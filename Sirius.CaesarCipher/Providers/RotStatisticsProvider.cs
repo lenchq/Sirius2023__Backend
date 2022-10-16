@@ -29,7 +29,8 @@ public sealed class RotStatisticsProvider : IRotStatisticsProvider
                     Rot = value,
                     Usages = count,
                 };
-            });
+            })
+            .OrderByDescending(x => x.Usages);
         return usageStats.ToArray();
     }
 }
