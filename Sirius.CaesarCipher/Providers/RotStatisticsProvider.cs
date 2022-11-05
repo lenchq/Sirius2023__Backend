@@ -15,10 +15,10 @@ public sealed class RotStatisticsProvider : IRotStatisticsProvider
     public async Task<ShiftStatistics[]> GetStatisticsAsync()
     {
         var stats = await _repo.GetShiftDataAsync();
-        var todayStats = stats.Where(static x => x.Date.Date == DateTime.Today.Date);
+        var todayStats = stats.Where(static x => x.Date == DateTime.Today.Date);
 
         var usageStats = todayStats
-            .DistinctBy(x => x.Shift)
+            .DistinctBy(static x => x.Shift)
             .Select(x =>
             {
                 var value = x.Shift;
@@ -30,7 +30,7 @@ public sealed class RotStatisticsProvider : IRotStatisticsProvider
                     Usages = count,
                 };
             })
-            .OrderByDescending(x => x.Usages);
+            .OrderByDescending(static x => x.Usages);
         return usageStats.ToArray();
     }
 }
