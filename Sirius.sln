@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{504650EF-CCC2-455A-81C6-26410ADF90B1}"
 	ProjectSection(SolutionItems) = preProject
@@ -8,6 +8,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EEE14366-E63A-4BF3-AC9F-B73B83B7CB35}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{857F0A2B-B78F-4AF1-89E2-3A0A7CC57846}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaesarCipher", "Sirius.CaesarCipher\Sirius.CaesarCipher.csproj", "{0F73DDC7-D92F-4CD6-A2B9-754DED2CEFB1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirius.LibraryGraphQL", "Sirius.LibraryGraphQL\Sirius.LibraryGraphQL.csproj", "{193A0FBF-AB0F-41B4-B020-88AD38509215}"
 EndProject
