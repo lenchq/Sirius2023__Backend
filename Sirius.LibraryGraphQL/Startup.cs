@@ -1,4 +1,5 @@
-﻿using HotChocolate.AspNetCore;
+﻿using System.Net;
+using HotChocolate.AspNetCore;
 using HotChocolate.AspNetCore.GraphiQL;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
@@ -7,12 +8,6 @@ using Sirius.LibraryGraphQL.Interfaces;
 using Sirius.LibraryGraphQL.Model;
 using Sirius.LibraryGraphQL.Repository;
 using Sirius.LibraryGraphQL.Types;
-
-// using Sirius.LibraryGraphQL.Database;
-// using Sirius.LibraryGraphQL.Interfaces;
-// using Sirius.LibraryGraphQL.Model;
-// using Sirius.LibraryGraphQL.Providers;
-// using Sirius.LibraryGraphQL.Repository;
 
 namespace Sirius.LibraryGraphQL;
 
@@ -38,6 +33,12 @@ internal sealed class Startup
         //app.UseWebSockets();
         app.UseEndpoints(endpoints =>
         {
+            endpoints.MapGet("/", (ctx) =>
+            {
+                ctx.Response.Redirect("/graphql", true);
+                return Task.FromResult(
+                    new Microsoft.AspNetCore.Mvc.RedirectResult("/graphql", true));
+            });
             endpoints.MapGraphQL();
             //endpoints.MapGraphQLHttp();
             endpoints.MapGraphQLSchema();
