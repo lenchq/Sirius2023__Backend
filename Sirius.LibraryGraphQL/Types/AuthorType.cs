@@ -1,5 +1,4 @@
-﻿using Sirius.LibraryGraphQL.Database;
-using Sirius.LibraryGraphQL.Interfaces;
+﻿using Sirius.LibraryGraphQL.Interfaces;
 using Sirius.LibraryGraphQL.Model;
 
 namespace Sirius.LibraryGraphQL.Types;
